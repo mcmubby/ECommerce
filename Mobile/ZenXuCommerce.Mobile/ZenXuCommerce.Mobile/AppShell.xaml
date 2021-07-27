@@ -78,7 +78,16 @@
         FlyoutDisplayOptions="AsMultipleItems" will create a separate flyout item for each child element    
         https://docs.microsoft.com/dotnet/api/xamarin.forms.shellgroupitem.flyoutdisplayoptions?view=xamarin-forms
     -->
-    <FlyoutItem Title="About" Icon="icon_about.png">
+    <!-- 
+        Find a way to include navigation on this first one
+        since you made it default and invisible on the list already
+        so no matter the current page, this will always be the final page on the stack
+        Checkout the MenuItem tag for this and use Click event. It seems crude but it should work 
+    -->
+    <FlyoutItem FlyoutItemIsVisible="False">
+        <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
+    </FlyoutItem>
+    <FlyoutItem Shell.TitleColor="Beige" Title="About" Icon="icon_about.png">
         <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
     </FlyoutItem>
     <FlyoutItem Title="Browse" Icon="icon_feed.png">

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:ZenXuCommerce.Mobile"
+             x:Class="ZenXuCommerce.Mobile.Views.SignIn">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Color x:Key="LightGreenColor">#2FA999</Color>
+            <Color x:Key="BorderColor">#D8D8D8</Color>
+
+            <Style x:Key="LableStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#666666" />
+                <Setter Property="FontSize" Value="Large" />
+            </Style>
+            <Style x:Key="FrameStyle" TargetType="Frame">
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="CornerRadius" Value="5" />
+                <Setter Property="BorderColor" Value="{StaticResource BorderColor}" />
+            </Style>
+            <Style x:Key="EntryStyle" TargetType="Entry">
+                <Setter Property="HeightRequest" Value="40"></Setter>
+                <Setter Property="Margin" Value="5,0,0,0"></Setter>
+            </Style>
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <Grid Margin="24,84,24,17" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="68*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" RowSpacing="16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.ColumnSpan="2">
+                    <Label Text="Sign in
+                           to your account" FontFamily="TT Norms Pro" FontSize="24" FontAttributes="Bold" TextColor="Black"/>
+                </StackLayout>
+                <StackLayout Grid.Column="3">
+                    <Image Source="avatar.png" VerticalOptions="Center" HorizontalOptions="Center"/>
+                </StackLayout>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <Label Text="Email Address" TextColor="Black" FontAttributes="Bold" FontSize="15" />
+                                <Frame Style="{StaticResource FrameStyle}">
+                                    <controls:CustomEntry Style="{StaticResource EntryStyle}" HeightRequest="47" FontSize="15" BackgroundColor="#F7F7F7" Placeholder="Email Address" VerticalTextAlignment="Center" TextColor="Black"/>
+                                </Frame>
+                            </StackLayout>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <Label Text="Password" TextColor="Black" FontAttributes="Bold" FontSize="15" />
+                                <Frame Style="{StaticResource FrameStyle}">
+                                    <controls:CustomEntry Style="{StaticResource EntryStyle}" HeightRequest="47" FontSize="15" BackgroundColor="#F7F7F7" Placeholder="Password" VerticalTextAlignment="Center" TextColor="Black"/>
+                                </Frame>
+                            </StackLayout>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
