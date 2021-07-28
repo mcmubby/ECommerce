@@ -16,73 +16,81 @@
                 <Setter Property="HasShadow" Value="False" />
                 <Setter Property="Padding" Value="0" />
                 <Setter Property="CornerRadius" Value="5" />
-                <Setter Property="BorderColor" Value="{StaticResource BorderColor}" />
             </Style>
             <Style x:Key="EntryStyle" TargetType="Entry">
-                <Setter Property="HeightRequest" Value="40"></Setter>
-                <Setter Property="Margin" Value="5,0,0,0"></Setter>
+                <Setter Property="HeightRequest" Value="47"></Setter>
+                <Setter Property="PlaceholderColor" Value="#BABABA"></Setter>
             </Style>
         </ResourceDictionary>
 
     </ContentPage.Resources>
-    
+
     <ContentPage.Content>
-        <Grid Margin="24,84,24,17" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="68*"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Grid Grid.Row="0" RowSpacing="16">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <StackLayout Grid.ColumnSpan="2">
-                    <Label Text="Sign in
-                           to your account" FontFamily="TT Norms Pro" FontSize="24" FontAttributes="Bold" TextColor="Black"/>
+        <ScrollView Background="white">
+            <StackLayout Margin="24,84,24,24" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout Margin="0,0,0,48">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Grid.ColumnSpan="2">
+                            <Label Text="Sign in&#x0a;to your account" FontSize="24" FontAttributes="Bold" TextColor="Black"/>
+                        </StackLayout>
+                        <StackLayout Grid.Column="3">
+                            <Image Source="e.png" VerticalOptions="Center" Aspect="AspectFit" />
+                        </StackLayout>
+                    </Grid>
                 </StackLayout>
-                <StackLayout Grid.Column="3">
-                    <Image Source="avatar.png" VerticalOptions="Center" HorizontalOptions="Center"/>
-                </StackLayout>
-            </Grid>
-            <Grid Grid.Row="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
+
+                <StackLayout>
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <Grid Grid.Row="0">
-                            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Grid Grid.Row="0" >
+                            <StackLayout Spacing="16">
                                 <Label Text="Email Address" TextColor="Black" FontAttributes="Bold" FontSize="15" />
                                 <Frame Style="{StaticResource FrameStyle}">
-                                    <controls:CustomEntry Style="{StaticResource EntryStyle}" HeightRequest="47" FontSize="15" BackgroundColor="#F7F7F7" Placeholder="Email Address" VerticalTextAlignment="Center" TextColor="Black"/>
+                                    <controls:CustomEntry Style="{StaticResource EntryStyle}" HeightRequest="47" FontSize="15" BackgroundColor="#F7F7F7" PlaceholderColor="#BABABA" Placeholder="Email Address" VerticalTextAlignment="Center" TextColor="Black"/>
                                 </Frame>
                             </StackLayout>
                         </Grid>
-                        <Grid Grid.Row="1">
-                            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Grid Grid.Row="1" Margin="0,0,0,8">
+                            <StackLayout Spacing="16">
                                 <Label Text="Password" TextColor="Black" FontAttributes="Bold" FontSize="15" />
                                 <Frame Style="{StaticResource FrameStyle}">
-                                    <controls:CustomEntry Style="{StaticResource EntryStyle}" HeightRequest="47" FontSize="15" BackgroundColor="#F7F7F7" Placeholder="Password" VerticalTextAlignment="Center" TextColor="Black"/>
+                                    <controls:CustomEntry Style="{StaticResource EntryStyle}" HeightRequest="47" FontSize="15"  BackgroundColor="#F7F7F7" PlaceholderColor="#BABABA" IsPassword="True" Placeholder="Password" VerticalTextAlignment="Center" TextColor="Black"/>
                                 </Frame>
+                            </StackLayout>
+                        </Grid>
+                        <Grid Grid.Row="2">
+                            <StackLayout Spacing="16">
+                                <Label Text="Forgot Password?" TextColor="#819272" FontSize="13" HorizontalTextAlignment="End" />
+                                <Button BackgroundColor="#3A953C" Text="Login" TextColor="White" FontAttributes="Bold" TextTransform="None" CornerRadius="5" FontSize="16"/>
                             </StackLayout>
                         </Grid>
                     </Grid>
-                </Grid>
-                
-            </Grid>
-        </Grid>
+                </StackLayout>
+
+
+
+                <Label Margin="0,16,0,0" Text="- OR SIGN IN WITH SOCIALS -" TextColor="#819272" HorizontalTextAlignment="Center"/>
+
+
+                <StackLayout Margin="0,16,0,0">
+                    <Grid Grid.Row="1">
+                        <StackLayout>
+                            <Button BorderColor="Black" BorderWidth="1" BackgroundColor="White" Text="Sign in with Google" TextColor="Black" FontAttributes="Bold" TextTransform="None" CornerRadius="5" FontSize="16"/>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

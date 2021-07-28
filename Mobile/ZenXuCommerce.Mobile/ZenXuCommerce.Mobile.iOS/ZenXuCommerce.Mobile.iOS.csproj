@@ -143,4 +143,7 @@
       <Name>ZenXuCommerce.Mobile</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\e.png" />
+  </ItemGroup>
 </Project>
