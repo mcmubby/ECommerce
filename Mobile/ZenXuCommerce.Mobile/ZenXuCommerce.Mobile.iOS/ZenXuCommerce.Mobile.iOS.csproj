@@ -146,4 +146,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\e.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\googleicon.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\defaultavatar.svg" />
+  </ItemGroup>
 </Project>

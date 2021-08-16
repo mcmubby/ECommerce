@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -32,6 +33,7 @@ namespace ZenXuCommerce.Mobile.ViewModels
             set => SetProperty(ref text, value);
         }
 
+        [Required] //na me put this one here
         public string Description
         {
             get => description;
